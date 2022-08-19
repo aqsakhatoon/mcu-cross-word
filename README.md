@@ -17,12 +17,16 @@ Inspiration Wireframe: https://imgur.com/a/0oo9ohu
 
 
 ## MVP Goals:
-- Creating enough words/hints that can shuffle correctly
+- Create a timer that lasts 60 seconds
+- Create a "shuffle" option that would be random
+- Render all words/hints numerically
+- Be able to restart timer 
 
 ### Stretch Goals:
 - Completing the crossword and adding "beginner, intermediate, and expert" levels
 - Adding different timers?
+- Creating enough words/hints that can shuffle correctly
 
 ## Potential Roadblocks:
-- Not adding enough hints/words?
+- Not adding enough detail to your code
 - Timer/button(s) won't work
