@@ -18,7 +18,7 @@ Inspiration Wireframe: https://imgur.com/a/0oo9ohu
 
 ## MVP Goals:
 - Create a timer that lasts 60 seconds
-- Create a "shuffle" option that would be random
+- Render a crossword puzzle that has 10 total words(5 across, 5 down)
 - Render all words/hints numerically
 - Be able to restart timer 
 
