@@ -1,111 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css"/>
-    <script src="./script.js"></script>
+<html>
+  <head>
     <title>MCU Crossword</title>
-    </head>
-    <body>
-
- <div class="container crosswordDisplay">
-  
-    <div class="row">
-    <!-- Create & Play buttons required for userxa generated crossword - disabled for Proscribed questions -->
-        <div class="btn btn-default disabled" id="btnCreate">Create</div>
-        <div class="btn btn-default disabled" id="btnPlay">Play</div>
-      
-        <div class="btn btn-default" id="btnReset">Reset</div>
-         <div class="btn btn-default" id="btnCheck">Check Answers</div>
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./script.js"></script>
+  </head>
+  <body class="layer" id="background">
+    <h1>MCU Crossword</h1>
+    <div id="nav-container">
+      <div id="timer">
+        <label id="minutes">00</label>:<label id="seconds">00</label>
       </div>
-    
-      <div class="center crossword" id="crossword"></div>
-      
-    <div class="btn" id="btnGen">Generate</div>
-      
-      
-      <div class="col-lg-6 ">
-      <div class="clueBlock" id="cluesAcross">
-        <div class="clueDirection" id="directionAcross">ACROSS</div>
-    
-        <div class="line">
-          <input class="word" type="text" value="Bangle" />
-          <span class="lineNum"></span>
-          <input class="clue" value="Where Ms.Marvel gets all her powers from" />
+      <div class="message-container hidden">You won!</div>
+      <div id="button-holder">
+        <button class ="button" id="clear-puzzle" type="button">Clear</button>
+        <button class ="button" id="check-puzzle" type="button">Check</button>
+        <button class ="button" id="reveal-puzzle" type="button">Reveal</button>
+        <button class ="button" id="instructions" type="button">Instructions</button>
+      </div>
+    </div>
+    <div id="instructions-container" class="hidden">
+      <h2>Instructions</h2>
+      <p>Use the provided clues to solve the crossword puzzle by typing letters into the puzzle grid. The goal is to solve the puzzle as quickly as possible. Use "Delete" to overwrite letters that you think are incorrect and double click to toggle between "Across" and "Down".</p>
+      <p>Happy puzzling!</p>
+      <div id="hide-instructions-holder">
+        <button class ="button" id="hide-instructions" type="button">Hide instructions</button>
+      </div>
+    </div>
+    <div id="game-container">
+      <div class="grid-container">
+        <div class="black-box"></div>
+        <div class="box">
+          <p>1</p>
+          <input id="one" type="text" autocomplete="off" maxlength=1/>
         </div>
-    
-        <div class="line">
-          <input class="word" type="text" value="Anulax Batteries" />
-          <span class="lineNum"></span>
-          <input class="clue" value="The name of the batteries the Guardians of the Galaxy had to protect in Vol. 2" />
+        <div class="box">
+          <p>2</p>
+          <input id="two" type="text" autocomplete="off" maxlength=1 />
         </div>
-    
-        <div class="line">
-            <input class="word" type="text" value="Asgard" />
-            <span class="lineNum"></span>
-            <input class="clue" value="Thor's origin" />
-          </div>
-    
-          <div class="line">
-            <input class="word" type="text" value="Jarvis" />
-            <span class="lineNum"></span>
-            <input class="clue" value="The name of Tony Stark's first AI assistant" />
-          </div>
-    
-          <div class="line">
-            <input class="word" type="text" value="Scarlet Witch" />
-            <span class="lineNum"></span>
-            <input class="clue" value="The most powerful Avenger" />
-
-          </div>
-          
-          <div class="col-lg-6">
-            <div class="clueBlock" id="cluesDown">
-              <div class="clueDirection" id="directionDown">DOWN</div>
-
-          <div class="line">
-            <input class="word" type="text" value="Nick Fury" />
-            <span class="lineNum"></span>
-            <input class="clue" value="The founder of 'Earth's Mightiest Heroes'" />
-          </div>
-
-          <div class="line">
-            <input class="word" type="text" value="Shang-Chi" />
-            <span class="lineNum"></span>
-            <input class="clue" value="He defeated his father with the help of his mother's side of the family" />
-          </div>
-
-          <div class="line">
-            <input class="word" type="text" value="Peter Parker" />
-            <span class="lineNum"></span>
-            <input class="clue" value="The youngest Avenger" />
-          </div>
-
-          <div class="line">
-            <input class="word" type="text" value="Peggy Carter" />
-            <span class="lineNum"></span>
-            <input class="clue" value="Steve Rogers's wife" />
-          </div>
-
-          <div class="line">
-            <input class="word" type="text" value="Hawkeye" />
-            <span class="lineNum"></span>
-            <input class="clue" value="The Avenger who uses a bow and arrow" />
-          </div>
-    </body>
-    <style>
-        table {
-            border-collapse: collapse;
-        }
-        div {
-            border: 1px solid black;
-            width: 40px;
-            height: 40px;
-            
-        }
-        
-    </style>
-        
-
+        <div class="box">
+          <p>3</p>
+          <input id="three" type="text" autocomplete="off" maxlength=1 />
+        </div>
+        <div class="box">
+          <p>4</p>
+          <input id="four" type="text" autocomplete="off" maxlength=1 />
+        </div>
+        <div class="black-box"></div>
+        <div class="box">
+          <p>5</p>
+          <input id="five" type="text" autocomplete="off" maxlength=1 />
+        </div>
+        <div class="box">
+          <input id="six" type="text" autocomplete="off" maxlength=1 />
+        </div>
+        <div class="box">
+          <input id="seven" type="text" autocomplete="off" maxlength=1 />
+        </div>
+        <div class="box">
+          <input id="eight" type="text" autocomplete="off" maxlength=1 />
+        </div>
+        <div class="box">
+          <p>6</p>
+          <input id="nine" type="text" autocomplete="off" maxlength=1 />
+        </div>
+        <div class="box">
+          <input id="ten" type="text" autocomplete="off" maxlength=1 />
+        </div>
+        <div class="box">
+          <input id="eleven" type="text" autocomplete="off" maxlength=1 />
+        </div>
+        <div class="box">
+          <input id="twelve" type="text" autocomplete="off" maxlength=1 />
+        </div>
+        <div class="box">
+          <input id="thirteen" type="text" autocomplete="off" maxlength=1 />
+        </div>
+        <div class="box">
+          <p>7</p>
+          <input id="fourteen" type="text" autocomplete="off" maxlength=1 />
+        </div>
+        <div class="box">
+          <input id="fifteen" type="text" autocomplete="off" maxlength=1 />
+        </div>
+        <div class="box">
+          <input id="sixteen" type="text" autocomplete="off" maxlength=1 />
+        </div>
+        <div class="box">
+          <input id="seventeen" type="text" autocomplete="off" maxlength=1 />
+        </div>
+        <div class="black-box"></div>
+        <div class="box">
+          <p>8</p>
+          <input id="eighteen" type="text" autocomplete="off" maxlength=1 />
+        </div>
+        <div class="box">
+          <input id="nineteen" type="text" autocomplete="off" maxlength=1 />
+        </div>
+        <div class="box">
+          <input id="twenty" type="text" autocomplete="off" maxlength=1 />
+        </div>
+        <div class="box">
+          <input id="twentyone" type="text" autocomplete="off" maxlength=1 />
+        </div>
+        <div class="black-box"></div>
+      </div>
+      <div id="reset-holder">
+        <button class ="button hidden" id="reset" type="button" >Play again?</button>
+      </div>
+      <div class="clue-container">
+        <div class="across">
+          <h3 class="direction-title">Across</h3>
+          <ol>
+            <li id="top-clue" class="clue">
+              Scarlet Witch's first name
+            </li>
+            <li class="clue" value="5">
+              The founder of 'Earth's Mightiest Heroes'
+            </li>
+            <li class="clue">_____ Banner</li>
+            <li class="clue">God of Thunder's other name</li>
+            <li class="clue">Winter Soldier's nickname, given by Steve Rogers</li>
+          </ol>
+        </div>
+        <div class="down">
+          <h3 class="direction-title">Down</h3>
+          <ol>
+            <li id="top-clue" class="clue">____ Lee</li>
+            <li class="clue">
+              Thor's younger brother
+            </li>
+            <li class="clue">Owner of Stark Technologies</li>
+            <li class="clue">I am _____</li>
+            <li class="clue" value="6">Natasha's superhero name is Black _____</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

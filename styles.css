@@ -1,109 +1,229 @@
-html{
-    height:100%;
-  }
-  body{
-    height:100%;
-    min-width: 400px;
-    margin:0;
-    
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  
-  .container{
-    position: absolute;
-    bottom: 0; top: 0; left: 0; right: 0;
-    text-align: center;
-  }
-  .center{
-    margin: 0 auto;
-  }
-  
-  .btn{
-    margin: 8px 4px 0;  
-  }
-  .btn{
-    width: 172px;
-    height: 28px;
-  }
-  
-  .line{  
-    height: 2em;
-  }
-  .word, .clue{
-    display: inline-block;
-    height: 1.5em;  
-    padding: 0 5px;
-  }
-  .word{
-    text-align: right;  
-    width: 100px;
-  }
-  .clue{
-    width: 500px;
-  }
-  
-  
-  .crossword{
-    display: block;  
-    background-color: rgb(32,32,32);  
-  }
-  .square{  
-    margin: 0 1px 1px 0;
-    display: inline-block;
-    font: 24px Calibri;
-    width: 1.25em;
-    height: 1.25em;
-    line-height: 1.25em;
-    vertical-align: middle;
-    
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  .letter{
-    background-color: rgb(255,255,255);
-     
-    -webkit-touch-callout: text;
-    -webkit-user-select: text;
-    -khtml-user-select: text;
-    -moz-user-select: text;
-    -ms-user-select: text;
-    user-select: text;
-  }
-  .char:focus{
-    -webkit-box-shadow: 0 0 0 2px rgba(255,32,32,1);
-    -moz-box-shadow: 0 0 0 2px rgba(255,32,32,1);
-    box-shadow: inset 0 0 0 2px rgba(255,32,32,1);  
-  }
-  .char {
-    font-size:24px;
-    text-transform: uppercase;
-    outline: 0;
-    border: 0;
-    padding: 0;
-    margin: -1px 0 0 -1px;
-    width: 1.35em;
-    height: 1.35em;
-    text-align: center;
-    background: none; 
-  } 
-  
-  .hide{
-    visibility: hidden;
-  }
-  
-  .clueReadOnly
-  {
-    border: 0 ;
-    outline: 0;
-    color:#303030 !important;
-    background:none;
-  }
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap");
+
+* {
+  font-family: "Playfair Display", serif;
+  color: #212a7b;
+}
+
+
+
+h1 {
+  text-align: center;
+  color: #af2012;
+  font-size: 4em;
+  font-weight: 900;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  filter: drop-shadow(5px 5px 6px rgba(33, 42, 123, 0.4));
+}
+
+.message-container {
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: 900;
+}
+
+#nav-container {
+  border: 3px solid rgb(101, 131, 137);
+  background-color: rgba(246, 245, 193, 0.8);
+  width: 80.5%;
+  height: 50px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  filter: drop-shadow(10px 10px 6px rgba(33, 42, 123, 0.4));
+}
+
+.button {
+  font-size: 1em;
+  font-weight: 700;
+  background-color: white;
+  border: 1px solid rgb(101, 131, 137);
+}
+
+#reset-holder {
+  position: absolute;
+  text-align: center;
+  z-index: 99;
+}
+
+#reset {
+  font-size: 1.5em;
+  color: #af2012;
+  padding: 5px;
+  filter: drop-shadow(10px 10px 6px rgba(33, 42, 123, 0.4));
+}
+
+#timer {
+  font-size: 1.5em;
+  padding-left: 20px;
+  color: #af2012;
+  width: 100px;
+}
+
+#button-holder {
+  padding: 10px;
+  margin-right: 0;
+}
+
+#minutes,
+#seconds {
+  color: #af2012;
+}
+
+#instructions-container {
+  position: absolute;
+  z-index: 99;
+  border: 3px solid rgb(101, 131, 137);
+  background-color: rgba(246, 245, 193, 0.9);
+  width: 80.5%;
+  margin-left: 9.5%;
+  margin-top: 20px;
+  font-family: "Playfair Display", serif;
+  filter: drop-shadow(10px 10px 6px rgba(33, 42, 123, 0.4));
+}
+
+#instructions-container > h2 {
+  text-align: center;
+  padding-left: 100px;
+  padding-right: 100px;
+  color: #af2012;
+  text-decoration: underline;
+}
+
+#instructions-container > p {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding-left: 100px;
+  padding-right: 100px;
+  font-size: 1.2em;
+}
+
+#hide-instructions-holder {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#hide-instructions {
+  width: 150px;
+  margin: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+/***** Game Styling *****/
+#game-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  width: 400px;
+  height: 400px;
+  border: 2px solid rgb(101, 131, 137);
+  filter: drop-shadow(10px 10px 6px rgba(33, 42, 123, 0.4));
+}
+
+.black-box {
+  /* border: 1px solid white; */
+  background-color: rgb(101, 131, 137);
+}
+
+.box {
+  border: 1px solid rgb(101, 131, 137);
+  display: flex;
+}
+
+div.box > p {
+  padding-left: 6px;
+  margin-top: 0;
+  position: absolute;
+  font-weight: 900;
+  color: #af2012;
+  z-index: 99;
+}
+
+input {
+  width: 98%;
+  height: 98%;
+  text-transform: uppercase;
+  font-size: 3em;
+  text-align: center;
+  color: transparent;
+  text-shadow: 0 0 0 rgb(33, 42, 123);
+  font-weight: 700;
+  border-radius: 0%;
+  border: none;
+}
+
+.incorrect {
+  color: transparent;
+  text-shadow: 0 0 0 #af2012;
+  text-decoration: line-through;
+}
+
+/***** Clue Styling *****/
+
+.clue-container {
+  display: flex;
+  flex-wrap: nowrap;
+  border: 3px solid rgb(101, 131, 137);
+  height: 400px;
+  width: 400px;
+  font-size: 1em;
+  background-color: rgba(255, 255, 255, 0.8);
+  filter: drop-shadow(10px 10px 6px rgba(33, 42, 123, 0.4));
+}
+
+.across {
+  width: 50%;
+  border-right: 2px solid rgb(101, 131, 137);
+}
+
+.down {
+  width: 50%;
+}
+
+h3.direction-title {
+  text-align: center;
+  border-bottom: 2px solid rgb(101, 131, 137);
+  padding-bottom: 15px;
+  font-size: 1.5em;
+  font-weight: 900;
+}
+
+.clue {
+  padding-right: 17px;
+  padding-left: 0;
+  padding-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.05em;
+}
+
+#top-clue {
+  padding-top: 0;
+}
+
+.cream-highlight {
+  background-color: rgba(246, 245, 193, 0.8);
+  position: relative;
+  width: 83%;
+}
+
+.word-highlight {
+  background-color: rgba(246, 245, 193, 0.8);
+  position: relative;
+}
+
+.highlight-letter {
+  background-color: rgba(255, 255, 255, 0.8);
+}
