@@ -18,7 +18,7 @@ Once they finish, they need to click the "Done!" button. If they choose to, they
 
 ## Wireframes:
 Inspiration Wireframe: https://imgur.com/a/0oo9ohu
-
+Layout Inspiration: Louisa Johnston
 
 ## MVP Goals:
 - Render a crossword puzzle that has 8 total words
