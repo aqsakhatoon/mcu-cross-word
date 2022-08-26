@@ -2,6 +2,9 @@
 
 ## Test your knowledge of the Marvel Cinematic Universe in One Minute!
 
+## Website URL 
+
+
 #### Instructions:
 
 There is only one player. As soon as the player starts the timer, they have 60 seconds to really know how much they know about the MCU. 
@@ -10,7 +13,8 @@ Once they finish, they need to click the "Done!" button. If they choose to, they
 
 ## Tech Stack
 - DOM Manipulation
-- Shuffling old words out for new ones.
+- Grids
+
 
 ## Wireframes:
 Inspiration Wireframe: https://imgur.com/a/0oo9ohu
@@ -30,3 +34,4 @@ Inspiration Wireframe: https://imgur.com/a/0oo9ohu
 ## Potential Roadblocks:
 - Not adding enough detail to your code
 - Buttons not working 
+- Words will not match 
