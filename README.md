@@ -17,16 +17,16 @@ Inspiration Wireframe: https://imgur.com/a/0oo9ohu
 
 
 ## MVP Goals:
-- Create a timer that lasts 60 seconds
-- Render a crossword puzzle that has 10 total words(5 across, 5 down)
+- Render a crossword puzzle that has 8 total words
 - Render all words/hints numerically
-- Be able to restart timer 
+- Be able to restart game
 
 ### Stretch Goals:
 - Completing the crossword and adding "beginner, intermediate, and expert" levels
 - Adding different timers?
 - Creating enough words/hints that can shuffle correctly
+- Creating a timer
 
 ## Potential Roadblocks:
 - Not adding enough detail to your code
-- Timer/button(s) won't work
+- Buttons not working 
