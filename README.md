@@ -2,8 +2,11 @@
 
 ## Test your knowledge of the Marvel Cinematic Universe in One Minute!
 
-## Website URL : https://aqsakhatoon.github.io/mcu-cross-word/
+## Post Reflection:
 
+Looking back at this project, I realized that it was a great learning experience, no matter how many roadblocks I went through. I definitely learned more about JS, HTML, and CSS throughout the week.
+
+#### Website URL : https://aqsakhatoon.github.io/mcu-cross-word/
 
 #### Instructions:
 
