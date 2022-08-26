@@ -10,9 +10,9 @@ Looking back at this project, I realized that it was a great learning experience
 
 #### Instructions:
 
-There is only one player. As soon as the player starts the timer, they have 60 seconds to really know how much they know about the MCU. 
+There is only one player. As soon as the player starts the timer, they should give themselves 60 seconds to really know how much they know about the MCU. 
 
-Once they finish, they need to click the "Done!" button. If they choose to, they can click the "Reset" button and try to beat their time!
+Once they finish, they can click the "Reset" button and try to beat their time!
 
 ## Tech Stack
 - DOM Manipulation
@@ -30,7 +30,6 @@ Layout Inspiration: Louisa Johnston
 
 ### Stretch Goals:
 - Completing the crossword and adding "beginner, intermediate, and expert" levels
-- Adding different timers?
 - Creating enough words/hints that can shuffle correctly
 - Creating a timer
 
